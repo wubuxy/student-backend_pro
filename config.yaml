@@ -1,0 +1,108 @@
+env: dev
+
+dev:
+  app:
+    name: Student Information Management System
+
+    description: student system
+
+    api: /api/v2
+
+    host: 0.0.0.0
+
+    port: 8000
+
+    uvicorn student_backend_pro.app.main: app
+
+    version: 2.0.0
+
+    reload: true
+
+  db:
+    host: localhost
+
+    port: 5433
+
+    username: wubuxy
+
+    password: password
+
+    database: student_info
+
+    driver_name: postgresql+asyncpg
+
+    echo: true
+
+    max_overflow: 10
+
+    pool_size: 50
+
+    pool_recycle: 3600
+
+    pool_timeout: 30
+
+  redis:
+    host: localhost
+
+    port: 6378
+
+    username: ""
+
+    password: ""
+
+    db: 0
+
+prod:
+  app:
+    name: Student Information Management System(prod)
+
+    description: student system
+
+    api: /api/v2
+
+    host: 0.0.0.0
+
+    port: 9999
+
+    uvicorn studentProject.student_backend_pro.app.main: app
+
+    version: 2.0.0
+
+    reload: false
+
+  db:
+      host: prod-host
+
+      port: 5432
+
+      username: wubuxy
+
+      password: password
+
+      database: student_info
+
+      driver_name: postgresql+asyncpg
+
+      echo: true
+
+      max_overflow: 10
+
+      pool_size: 50
+
+      pool_recycle: 3600
+
+      pool_timeout: 30
+
+  redis:
+      host: localhost
+
+      port: 6379
+
+      username: ""
+
+      password: ""
+
+      db: 0
+
+
+
